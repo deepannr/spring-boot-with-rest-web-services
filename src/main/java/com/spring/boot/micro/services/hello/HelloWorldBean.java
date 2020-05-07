@@ -1,4 +1,4 @@
-package com.spring.boot.micro.services.data;
+package com.spring.boot.micro.services.hello;
 
 public class HelloWorldBean {
 	private String message;

@@ -1,9 +1,8 @@
-package com.spring.boot.micro.services.rest;
+package com.spring.boot.micro.services.hello;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.spring.boot.micro.services.data.HelloWorldBean;
 
 @RestController
 public class HelloWorldApi {
@@ -16,5 +15,10 @@ public class HelloWorldApi {
 	@GetMapping(path = "/returnBean")
 	public HelloWorldBean returnBean() {
 		return new HelloWorldBean("DeeSb");
+	}
+	
+	@GetMapping(path = "/returnPathVariable/{name}")
+	public String returnPathVariable(@PathVariable String name) {
+		return "Hello " + name;
 	}
 }
