@@ -2,8 +2,11 @@ package com.spring.boot.micro.services.user;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.stereotype.Component;
+
+import com.spring.boot.micro.services.exception.UserNotFoundException;
 
 @Component
 class UserService {
@@ -26,11 +29,27 @@ class UserService {
 				return user;
 			}
 		}
-		return null;
+		throw new UserNotFoundException("id: " + id);
 	}
 
 	public void addUser(User user) {
 		user.setId(++userCount);
 		users.add(user);
+	}
+	
+	public void removeUser(int id) {
+		boolean userRemove = false;
+		Iterator<User> iterator = users.iterator();
+		while (iterator.hasNext()) {
+			if (id == iterator.next().getId()) {
+				userRemove = true;
+				iterator.remove();
+				System.out.println("User: " + id + " removed.");
+			}
+		}
+		
+		if(!userRemove) {
+			throw new UserNotFoundException("User: " + id + " not found.");
+		}
 	}
 }
