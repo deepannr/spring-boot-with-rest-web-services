@@ -3,8 +3,6 @@ package com.spring.boot.micro.services.exception;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import com.spring.boot.micro.services.util.StringUtils;
+import com.spring.boot.micro.services.util.ExceptionUtils;
 
 @RestController
 @ControllerAdvice

@@ -7,6 +7,9 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 
 /**
  * Here in the request name should be at least 3 characters, age to be positive, birth date to be past date. 
@@ -19,19 +22,23 @@ import javax.validation.constraints.Size;
 }
  */
 
+@ApiModel
 class User {
 	private int id;
 
-	@NotNull
-	@Size(min = 3, message = "Name should have at least 3 characters")
+	@NotNull(message = "{validation.user.name}")
+	@Size(min = 3, message = "{validation.user.name.length}")
+	@ApiModelProperty(notes = "Name should not be empty")
 	private String name;
 
 	@NotNull
-	@Positive(message = "Age should be greater than 0")
+	@Positive(message = "{validation.user.age}")
+	@ApiModelProperty(notes = "Name should have at least 3 characters")
 	private int age;
 
 	@NotNull
-	@Past(message = "Birth Date should not be greater than current date")
+	@Past(message = "{validation.user.birthDate}")
+	@ApiModelProperty(notes = "Birth Date should be at the past")
 	private Date birthDate;
 
 	public User(int id, String name, int age, Date birthDate) {
