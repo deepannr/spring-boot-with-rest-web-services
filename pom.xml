@@ -77,7 +77,18 @@
 		</dependency>
 		<!-- End Swagger -->
 
-
+		<!-- Actuator For Monitoring -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- To see the monitoring in browser -->
+		<!--  If this is enabled then spring boot not starting. -->
+<!-- 	<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency> -->
+		<!-- End Actuator -->
 
 	</dependencies>
 
