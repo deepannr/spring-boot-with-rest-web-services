@@ -2,6 +2,9 @@ package com.spring.boot.micro.services.user;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Positive;
@@ -18,12 +21,15 @@ import io.swagger.annotations.ApiModelProperty;
 	"id" : 2,
 	"name" : "pas",
 	"age" : -33,
-	"birthDate" : "1981-05-07T12:27:31.844+0000"
+	"birthDate" : "1981-03-26T15:30:31.844+0000"
 }
  */
 
-@ApiModel
+@ApiModel ("All Details about User")
+@Entity
 class User {
+	@Id
+	@GeneratedValue
 	private int id;
 
 	@NotNull(message = "{validation.user.name}")
@@ -40,6 +46,10 @@ class User {
 	@Past(message = "{validation.user.birthDate}")
 	@ApiModelProperty(notes = "Birth Date should be at the past")
 	private Date birthDate;
+	
+	public User() {
+		// Do Nothing
+	}
 
 	public User(int id, String name, int age, Date birthDate) {
 		super();

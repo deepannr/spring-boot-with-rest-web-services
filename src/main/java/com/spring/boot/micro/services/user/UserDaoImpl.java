@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.spring.boot.micro.services.exception.UserNotFoundException;
 
 @Component
-class UserService {
+class UserDaoImpl {
 	private static List<User> users = new ArrayList<>();
 	private static int userCount = 0;
 
