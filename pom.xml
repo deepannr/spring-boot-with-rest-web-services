@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.boot.micro.services</groupId>
-	<artifactId>spring-boot-with-micro-services</artifactId>
+	<artifactId>spring-boot-with-rest-web-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring-boot-with-micro-services</name>
+	<name>spring-boot-with-rest-web-services</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
