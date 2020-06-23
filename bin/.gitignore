@@ -29,6 +29,9 @@ build/
 
 ### VS Code ###
 .vscode/
-/pom.xml
+/SprBootWithRestfulWS.postman_collection.json
 /mvnw
 /mvnw.cmd
+/pom.xml
+/.mvn/
+/src/
