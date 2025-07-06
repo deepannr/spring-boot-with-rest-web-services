@@ -23,7 +23,6 @@ pipeline {
             steps {
                 echo "Build Stage is in progress ${mysecret}"
                 echo "param name is ${params.name}"
-                sh 'mvn -f pom.xml'
                 sh 'mvn compile'
             }
             
