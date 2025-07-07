@@ -5,10 +5,10 @@ pipeline {
     }
     stages{
         
-        stage('checkout'){
+        stage ('Checkout') {
             steps{
-                checkout scmGit(branches: [[name: '*/maaster']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/deepannr/spring-boot-with-rest-web-services.git']])
-            }    
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/deepannr/spring-boot-with-rest-web-services.git']])
+            }
         }
         stage('Build'){
             steps{
