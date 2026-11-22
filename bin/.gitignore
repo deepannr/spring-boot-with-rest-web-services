@@ -27,11 +27,6 @@ target/
 /.nb-gradle/
 build/
 
+
 ### VS Code ###
 .vscode/
-/SprBootWithRestfulWS.postman_collection.json
-/mvnw
-/mvnw.cmd
-/pom.xml
-/.mvn/
-/src/
